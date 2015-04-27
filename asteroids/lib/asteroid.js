@@ -6,6 +6,7 @@
   var Asteroid = window.Asteroids.Asteroid = function(pos, game){
     var defaults = {};
 
+    defaults.game = game;
     defaults.radius = 20;
     defaults.color = "red";
     defaults.pos = pos;
@@ -17,9 +18,19 @@
     }();
 
     window.Asteroids.MovingObject.call(this, defaults);
-    this.game = game;
   }
 
   window.Asteroids.Util.inherits(Asteroid, window.Asteroids.MovingObject);
+
+  Asteroid.prototype.collideWith = function(otherObject) {
+    if (otherObject instanceof window.Asteroids.Ship) {
+      console.log("ship collision");
+      console.log(otherObject.pos);
+      console.log(this.pos);
+      otherObject.relocate();
+    } else {
+      console.log("asteroid collision");
+    }
+  }
 
 })();

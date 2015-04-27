@@ -8,6 +8,7 @@
     this.velocity = params.vel;
     this.radius = params.radius;
     this.color = params.color;
+    this.game = params.game;
   };
 
   MovingObject.prototype.draw = function(ctx) {
@@ -38,6 +39,9 @@
     var dY = otherObject.pos[1] - this.pos[1];
     var distance = Math.sqrt( (dX * dX) + (dY * dY));
     return distance < this.radius + otherObject.radius;
+  };
+
+  MovingObject.prototype.collideWith = function (otherObject) {
   };
 
 })();

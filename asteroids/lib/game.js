@@ -9,48 +9,71 @@
     (function () {
 
       for(var i = 0; i < Game.NUM_ASTEROIDS; i++){
-        var pos = [
-          Math.random() * Game.DIM_X,
-          Math.random() * Game.DIM_Y
-        ]
+        var pos = this.randomPosition();
         this.asteroids.push(new window.Asteroids.Asteroid(pos, this));
       }
 
     }).call(this);
 
+    this.ship = new window.Asteroids.Ship(this.randomPosition(), this);
   }
 
-  Game.NUM_ASTEROIDS = 20;
+  Game.prototype.randomPosition = function() {
+    return [
+     Math.random() * Game.DIM_X,
+     Math.random() * Game.DIM_Y
+   ];
+  }
+
+  Game.NUM_ASTEROIDS = 10;
   Game.DIM_X = 1000;
   Game.DIM_Y = 600;
 
   Game.prototype.draw = function (ctx) {
     ctx.clearRect(0, 0, 1000, 600);
 
-    for (var i = 0; i < this.asteroids.length; i++) {
-      this.asteroids[i].draw(ctx);
+    for (var i = 0; i < this.allObjects().length; i++) {
+      this.allObjects()[i].draw(ctx);
     }
   };
 
   Game.prototype.moveObjects = function(){
-    for (var i = 0; i < this.asteroids.length; i++) {
-      this.asteroids[i].move();
+    for (var i = 0; i < this.allObjects().length; i++) {
+      this.allObjects()[i].move();
     }
-    this.checkCollisions();
   }
 
   Game.prototype.checkCollisions = function() {
-    for (var i = 0; i < this.asteroids.length; i++) {
-      for (var j = 0; i < this.asteroids.length; j++) {
-        console.log(i);
-        console.log(j);
+    var collidedPairs = [];
 
-        if (i !== j && this.asteroids[i].isCollidedWith(this.asteroids[j])) {
-          alert("COLLISION");
+    for (var i = 0; i < this.allObjects().length; i++) {
+      for (var j = 0; j < this.allObjects().length; j++) {
+        if (i !== j &&  this.allObjects()[i].isCollidedWith(this.allObjects()[j])) {
+          collidedPairs.push([this.allObjects()[j], this.allObjects()[i]]);
         }
       }
     }
+
+    for (var k = 0; k < collidedPairs.length; ++k){
+      collidedPairs[k][0].collideWith(collidedPairs[k][1]);
+    }
   }
+
+  Game.prototype.remove = function (asteroid) {
+    var index = this.asteroids.indexOf(asteroid);
+    if (index > -1){
+      this.asteroids.splice(index, 1);
+    }
+  };
+
+  Game.prototype.step = function () {
+    this.moveObjects();
+    this.checkCollisions();
+  };
+
+  Game.prototype.allObjects = function() {
+    return this.asteroids.concat(this.ship);
+  };
 
   Game.wrap = function (pos) {
     var wrappedPos = pos;
