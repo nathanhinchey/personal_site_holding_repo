@@ -29,11 +29,13 @@ body {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  transition: font-size 0.2s;
+  transition: font-size 0.2s, bottom 0.3s;
 }
 
 .endingnote:hover {
-  font-size: 1000%;
+  font-size: 5000%;
+  bottom: -200px;
+
 }
 
 header {
