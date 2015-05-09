@@ -11,8 +11,10 @@ window.Momday.markImagesWideOrTall = function (selector) {
 
     if (img.width > img.height){
       $(image).addClass("wide");
+      console.log("wide");
     } else {
       $(image).addClass("tall");
+      console.log("tall");
     }
   });
 }
