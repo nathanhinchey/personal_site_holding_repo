@@ -21,6 +21,7 @@ window.Momday.markImagesWideOrTall = function (selector) {
 
 window.Momday.switchPane = function (event) {
   return function(event) {
+    window.Momday.markImagesWideOrTall(".pictures-nav");
     var $button = $(event.currentTarget)
     var paneClass = $button.data("pane");
 

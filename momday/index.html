@@ -77,26 +77,18 @@
         </ul>
       </nav>
       <figure class="image-window"></figure>
-      <script>
-        $(function() {window.Momday.markImagesWideOrTall(".pictures-nav");})
-      </script>
     </section>
 
-    <section class="-pane">
+    <section class="notdead-pane">
       <p>No, just really busy.</p>
     </section>
 
     <script src="underscore-min.js"></script>
-
-
-    <script
-      src="scripts.js">
-    </script>
-
+    <script src="scripts.js"></script>
     <script>
       $(function () {
 
-        window.Momday.markImagesWideOrTall(".pictures-nav");
+        // window.Momday.markImagesWideOrTall(".pictures-nav");
 
         $('.leftnav').on("click", "button", window.Momday.switchPane(event));
 
