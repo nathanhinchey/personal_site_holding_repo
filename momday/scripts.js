@@ -6,8 +6,8 @@ window.Momday.markImagesWideOrTall = function (selector) {
   $.each($images, function(index, image){
     var img = new Image();
     img.src = $(image).attr("src");
-    console.log(width);
-    console.log(height);
+    console.log(img.width);
+    console.log(img.height);
 
     if (img.width > img.height){
       $(image).addClass("wide");
