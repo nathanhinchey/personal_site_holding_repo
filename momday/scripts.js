@@ -16,18 +16,16 @@ window.Momday.markImagesWideOrTall = function (selector) {
 }
 
 window.Momday.switchPane = function (event) {
-  return function(event) {
-    window.Momday.markImagesWideOrTall(".pictures-nav");
-    var $button = $(event.currentTarget)
-    var paneClass = $button.data("pane");
+  window.Momday.markImagesWideOrTall(".pictures-nav");
+  var $button = $(event.currentTarget)
+  var paneClass = $button.data("pane");
 
-    var $pane = $("section." + paneClass);
-    var $active = $(".active");
-    $active.removeClass("active");
+  var $pane = $("section." + paneClass);
+  var $active = $(".active");
+  $active.removeClass("active");
 
-    setTimeout(function () {
-      $pane.addClass("active");
-      $button.addClass("active");
-    }, 0);
-  };
+  setTimeout(function () {
+    $pane.addClass("active");
+    $button.addClass("active");
+  }, 0);
 };
