@@ -105,7 +105,7 @@
 
         // window.Momday.markImagesWideOrTall(".pictures-nav");
 
-        $('.leftnav').on("click", "button", window.Momday.switchPane);
+        $('.leftnav').on("click", "button", window.Momday.switchPane(event));
 
         $('.pictures-nav').on("click", "li", function(event){
           var $imageWindow = $(".image-window");
