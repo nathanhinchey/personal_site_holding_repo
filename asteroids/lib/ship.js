@@ -36,7 +36,7 @@
 
 
   Ship.prototype.facingVector = function () {
-    return [Math.sin(-this.facing), -Math.cos(this.facing)]
+    return [Math.sin(this.facing), Math.cos(this.facing)]
   },
 
   Ship.prototype.fireBullet = function() {

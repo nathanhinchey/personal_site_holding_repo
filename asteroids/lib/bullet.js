@@ -1,6 +1,6 @@
 (function() {
 
-  var BULLET_SPEED = 1.5;
+  var BULLET_SPEED = 3;
 
   var DEFAULTS = {
     radius: 3,
