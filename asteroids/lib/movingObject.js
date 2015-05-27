@@ -8,15 +8,23 @@
     this.velocity = params.vel;
     this.radius = params.radius;
     this.color = params.color;
+    this.lineWidth = params.lineWidth;
     this.game = params.game;
   };
 
   MovingObject.prototype.draw = function(ctx) {
 
-    ctx.fillStyle = this.color;
-
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = this.lineWidth;
+    var r = this.radius;
     ctx.beginPath();
-
+    if (this.triangle){
+      ctx.moveTo(this.pos[0], this.pos[1] - r);
+      ctx.lineTo(this.pos[0] - (0.8 * r), this.pos[1] + (0.8 * r));
+      ctx.lineTo(this.pos[0] + (0.8 * r), this.pos[1] + (0.8 * r));
+      ctx.lineTo(this.pos[0], this.pos[1] - r);
+      // ctx.moveTo(this.pos[0], this.pos[1])
+    }
     ctx.arc(
       this.pos[0],
       this.pos[1],
@@ -25,7 +33,7 @@
       2 * Math.PI,
       false
     );
-    ctx.fill();
+    ctx.stroke();
   };
 
   MovingObject.prototype.move = function() {

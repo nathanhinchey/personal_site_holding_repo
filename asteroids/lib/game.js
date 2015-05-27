@@ -16,21 +16,23 @@
     }).call(this);
 
     this.ship = new window.Asteroids.Ship(this.randomPosition(), this);
-  }
+  };
 
   Game.prototype.randomPosition = function() {
     return [
      Math.random() * Game.DIM_X,
      Math.random() * Game.DIM_Y
    ];
-  }
+ };
 
   Game.NUM_ASTEROIDS = 10;
-  Game.DIM_X = 1000;
+  Game.DIM_X = 800;
   Game.DIM_Y = 600;
 
   Game.prototype.draw = function (ctx) {
-    ctx.clearRect(0, 0, 1000, 600);
+    ctx.fillStyle = 000;
+    ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
 
     for (var i = 0; i < this.allObjects().length; i++) {
       this.allObjects()[i].draw(ctx);
@@ -41,7 +43,7 @@
     for (var i = 0; i < this.allObjects().length; i++) {
       this.allObjects()[i].move();
     }
-  }
+  };
 
   Game.prototype.checkCollisions = function() {
     var collidedPairs = [];
@@ -57,7 +59,7 @@
     for (var k = 0; k < collidedPairs.length; ++k){
       collidedPairs[k][0].collideWith(collidedPairs[k][1]);
     }
-  }
+  };
 
   Game.prototype.remove = function (asteroid) {
     var index = this.asteroids.indexOf(asteroid);

@@ -9,6 +9,7 @@
     defaults.game = game;
     defaults.radius = 20;
     defaults.color = "red";
+    defaults.lineWidth = 2;
     defaults.pos = pos;
     defaults.vel = function(){
       var negX = Math.random() > .5 ? -1 : 1;
