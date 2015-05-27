@@ -14,10 +14,10 @@
       this.game.draw(this.ctx)
     }.bind(this), 20);
 
-    key('w', function() { this.game.ship.power([0,-1]) }.bind(this));
-    key('a', function() { this.game.ship.power([-1,0]) }.bind(this));
-    key('s', function() { this.game.ship.power([0,1]) }.bind(this));
-    key('d', function() { this.game.ship.power([1,0]) }.bind(this));
+    key('up', function() { this.game.ship.power([0,-1]) }.bind(this));
+    key('left', function() { this.game.ship.power([-1,0]) }.bind(this));
+    key('down', function() { this.game.ship.power([0,1]) }.bind(this));
+    key('right', function() { this.game.ship.power([1,0]) }.bind(this));
   }
 
 })();
