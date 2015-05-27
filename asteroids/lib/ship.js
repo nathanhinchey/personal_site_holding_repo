@@ -22,10 +22,22 @@
 
   Ship.prototype.triangle = true;
 
-  Ship.prototype.power = function (impulse) {
-    this.velocity[0] += impulse[0];
-    this.velocity[1] += impulse[1];
+  Ship.prototype.facing = 0.0;
+
+  Ship.prototype.thrust = function (impulse) {
+    var direction = this.facingVector();
+    this.velocity[0] += impulse * direction[0];
+    this.velocity[1] += impulse * direction[1];
   };
+
+  Ship.prototype.turn = function (radians) {
+    this.facing = (this.facing + radians) % (2 * Math.PI);
+  },
+
+
+  Ship.prototype.facingVector = function () {
+    return [Math.sin(-this.facing), -Math.cos(this.facing)]
+  },
 
   Ship.prototype.fireBullet = function() {
     this.game.bullets.concat(new Bullet(this.game));
