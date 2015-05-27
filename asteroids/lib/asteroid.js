@@ -7,7 +7,7 @@
     var defaults = {};
 
     defaults.game = game;
-    defaults.radius = 20;
+    defaults.radius = 40;
     defaults.color = "red";
     defaults.lineWidth = 2;
     defaults.pos = pos;
