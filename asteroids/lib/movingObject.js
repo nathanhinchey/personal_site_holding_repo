@@ -19,11 +19,23 @@
     var r = this.radius;
     ctx.beginPath();
     if (this.triangle){
-      ctx.moveTo(this.pos[0], this.pos[1] - r);
-      ctx.lineTo(this.pos[0] - (0.8 * r), this.pos[1] + (0.8 * r));
-      ctx.lineTo(this.pos[0] + (0.8 * r), this.pos[1] + (0.8 * r));
-      ctx.lineTo(this.pos[0], this.pos[1] - r);
-      ctx.moveTo(this.pos[0] + r, this.pos[1])
+      //front
+      ctx.moveTo(
+        this.pos[0] - r * this.facingVector()[0],
+        this.pos[1] - r * this.facingVector()[1]);
+      // port rear
+      ctx.lineTo(
+        this.pos[0] + r * Math.cos(this.facing - (0.7 * Math.PI)),
+        this.pos[1] - r * Math.sin(this.facing - (0.7 * Math.PI)));
+      // starboard rear
+      ctx.lineTo(
+        this.pos[0] - r * Math.cos(this.facing + (0.7 * Math.PI)),
+        this.pos[1] + r * Math.sin(this.facing + (0.7 * Math.PI)));
+      //front
+      ctx.lineTo(
+        this.pos[0] - r * this.facingVector()[0],
+        this.pos[1] - r * this.facingVector()[1]);
+      ctx.moveTo(this.pos[0] + r, this.pos[1]);
     }
     ctx.arc(
       this.pos[0],
@@ -39,7 +51,7 @@
   MovingObject.prototype.move = function() {
     this.pos[0] += this.velocity[0];
     this.pos[1] += this.velocity[1];
-    this.pos = window.Asteroids.Game.wrap(this.pos);
+    this.pos = window.Asteroids.Game.wrap(this.pos, this.radius);
   };
 
   MovingObject.prototype.isCollidedWith = function(otherObject) {

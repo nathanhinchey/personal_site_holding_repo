@@ -25,12 +25,12 @@
    ];
  };
 
-  Game.NUM_ASTEROIDS = 3;
+  Game.NUM_ASTEROIDS = 0;
   Game.DIM_X = 800;
   Game.DIM_Y = 600;
 
   Game.prototype.draw = function (ctx) {
-    ctx.fillStyle = 000;
+    ctx.fillStyle = "#013";
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
     ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
 
@@ -77,7 +77,7 @@
     return this.asteroids.concat(this.ship);
   };
 
-  Game.wrap = function (pos) {
+  Game.wrap = function (pos, radius) {
     var wrappedPos = pos;
 
     if (pos[0] > Game.DIM_X) {
