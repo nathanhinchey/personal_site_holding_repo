@@ -23,7 +23,7 @@
       ctx.lineTo(this.pos[0] - (0.8 * r), this.pos[1] + (0.8 * r));
       ctx.lineTo(this.pos[0] + (0.8 * r), this.pos[1] + (0.8 * r));
       ctx.lineTo(this.pos[0], this.pos[1] - r);
-      // ctx.moveTo(this.pos[0], this.pos[1])
+      ctx.moveTo(this.pos[0] + r, this.pos[1])
     }
     ctx.arc(
       this.pos[0],
