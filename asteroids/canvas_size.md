@@ -22,6 +22,14 @@ In the HTML file:
 . . .
 ```
 
+###Avoid scroll bars
+In the CSS:
+```CSS
+body {
+  overflow: hidden;
+}
+```
+
 ###Making it resize with the window
 In the \*.js file:
 ```javascript
