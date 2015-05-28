@@ -45,7 +45,7 @@
 
   Asteroid.prototype.collideWith = function(otherObject) {
     if (otherObject instanceof window.Asteroids.Ship) {
-      otherObject.relocate();
+      otherObject.die();
     } else if (otherObject instanceof window.Asteroids.Bullet) {
       console.log("bullet collision");
       this.explode();

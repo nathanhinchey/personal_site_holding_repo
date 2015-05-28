@@ -18,6 +18,15 @@
 
   window.Asteroids.Util.inherits(Ship, window.Asteroids.MovingObject);
 
+  Ship.prototype.die = function(){
+    if (this.game.lives > 0){
+      this.game.lives--;
+      this.relocate();
+    } else {
+      this.game.gameOver();
+    }
+  }
+
   Ship.prototype.relocate = function () {
     this.pos = game.randomPosition();
     this.velocity = [0,0];
