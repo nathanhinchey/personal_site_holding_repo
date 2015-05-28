@@ -17,12 +17,10 @@
     key('up', function() { this.game.ship.thrust(-1) }.bind(this));
     key('left', function() {
       this.game.ship.turn(0.3);
-      console.log(this.game.ship.facing);
     }.bind(this));
     key('down', function() { this.game.ship.thrust(1) }.bind(this));
     key('right', function() {
       this.game.ship.turn(-0.3);
-      console.log(this.game.ship.facing);
     }.bind(this));
 
     key('space', function(){
