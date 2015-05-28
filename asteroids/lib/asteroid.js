@@ -3,11 +3,11 @@
     window.Asteroids = {};
   }
 
-  var Asteroid = window.Asteroids.Asteroid = function(pos, game){
+  var Asteroid = window.Asteroids.Asteroid = function(pos, game, size){
     var defaults = {};
 
+    defaults.radius = size;
     defaults.game = game;
-    defaults.radius = 40;
     defaults.color = "red";
     defaults.lineWidth = 2;
     defaults.pos = pos;
@@ -23,14 +23,35 @@
 
   window.Asteroids.Util.inherits(Asteroid, window.Asteroids.MovingObject);
 
+  Asteroid.prototype.explode = function() {
+    var index = this.game.asteroids.indexOf(this);
+    this.game.asteroids.splice(index, 1);
+    if (this.radius > 10){
+      for (var i = 0; i < 3; i++){
+        var babyPos = [
+          this.pos[0] + (this.radius/2) * i,
+          this.pos[1] + (this.radius/2) * i
+        ]
+        var baby = new window.Asteroids.Asteroid(
+          babyPos,
+          game,
+          this.radius/2
+        );
+        this.game.asteroids.push(baby);
+      }
+    }
+  };
+
   Asteroid.prototype.collideWith = function(otherObject) {
     if (otherObject instanceof window.Asteroids.Ship) {
-      console.log("ship collision");
-      console.log(otherObject.pos);
-      console.log(this.pos);
       otherObject.relocate();
-    } else {
-      console.log("asteroid collision");
+    } else if (otherObject instanceof window.Asteroids.Bullet) {
+      console.log("bullet collision");
+      this.explode();
+      var bulletIndex = this.game.bullets.indexOf(otherObject);
+      this.game.bullets.splice(bulletIndex, 1);
+    }else {
+      // console.log("asteroid collision");
     }
   }
 

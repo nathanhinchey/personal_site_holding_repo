@@ -11,7 +11,7 @@
 
       for(var i = 0; i < Game.NUM_ASTEROIDS; i++){
         var pos = this.randomPosition();
-        this.asteroids.push(new window.Asteroids.Asteroid(pos, this));
+        this.asteroids.push(new window.Asteroids.Asteroid(pos, this, 40));
       }
 
     }).call(this);
@@ -21,12 +21,12 @@
 
   Game.prototype.randomPosition = function() {
     return [
-     Math.random() * Game.DIM_X,
-     Math.random() * Game.DIM_Y
+     Math.random() * (Game.DIM_X * 0.8) + (Game.DIM_X * 0.1),
+     Math.random() * (Game.DIM_Y * 0.8) + (Game.DIM_Y * 0.1)
    ];
  };
 
-  Game.NUM_ASTEROIDS = 0;
+  Game.NUM_ASTEROIDS = 3;
   Game.DIM_X = 800;
   Game.DIM_Y = 600;
   Game.MAX_BULLETS = 10;
