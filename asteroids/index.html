@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Asteroids</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./lib/keymaster.js"></script>
+    <script type="application/javascript" src="./lib/movingObject.js"></script>
+    <script type="application/javascript" src="./lib/util.js"></script>
+    <script type="application/javascript" src="./lib/asteroid.js"></script>
+    <script type="application/javascript" src="./lib/ship.js"></script>
+    <script type="application/javascript" src="./lib/game.js"></script>
+    <script type="application/javascript" src="./lib/gameView.js"></script>
+    <script type="application/javascript" src="./lib/bullet.js"></script>
+    <header>
+      <h1 id="lives"></h1>
+      <h1 id="score"></h1>
+      <div id="game-over" class="hidden">
+        <h1>You lose!</h1>
+        <a href="javascript:window.location.reload(true)">
+          Play again?
+        </a>
+      </div>
+    </header>
+    <canvas
+      id="game-canvas"
+      width="800"
+      height="600">
+
+
+    <script type="text/javascript">
+      var ctx = document.getElementById("game-canvas").getContext("2d");
+
+      var game = new window.Asteroids.Game();
+      var gameView = new window.Asteroids.GameView(game, ctx);
+
+      gameView.start();
+
+    </script>
+  </body>
+</html>
+
+<style>
+  header {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    z-index: 10000;
+    font-family: sans-serif;
+    color: white;
+    width: 750px;
+  }
+
+  .ship {
+    text-decoration: underline;
+  }
+
+  #score {
+    display: block;
+    float: right;
+  }
+
+  #lives {
+    display: block;
+    float: left;
+  }
+
+  #game-over {
+    text-align: center;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 150px;
+    background: #F99;
+    color: #000;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
