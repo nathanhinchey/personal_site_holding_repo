@@ -24,6 +24,7 @@
   window.Asteroids.Util.inherits(Asteroid, window.Asteroids.MovingObject);
 
   Asteroid.prototype.explode = function() {
+    this.game.score++;
     var index = this.game.asteroids.indexOf(this);
     this.game.asteroids.splice(index, 1);
     if (this.radius > 10){

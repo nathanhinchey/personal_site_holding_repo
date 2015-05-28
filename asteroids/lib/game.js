@@ -4,7 +4,7 @@
   }
 
   var Game = window.Asteroids.Game = function(){
-
+    this.score = 0;
     this.asteroids = [];
     this.bullets = [];
     (function () {
@@ -34,6 +34,7 @@
 
 
   Game.prototype.draw = function (ctx) {
+    $("#score").html(this.score);
     // movement
 
     window.game.ship.drag();
