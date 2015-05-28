@@ -3,6 +3,13 @@
     window.Asteroids = {};
   }
 
+  $(window).resize(function() {
+    window.Asteroids.Game.DIM_X = $(window).width();
+    window.Asteroids.Game.DIM_Y = $(window).height();
+    $("canvas").attr("width", window.Asteroids.Game.DIM_X);
+    $("canvas").attr("height", window.Asteroids.Game.DIM_Y);
+  });
+
   var GameView = window.Asteroids.GameView = function(game, ctx) {
     this.game = game;
     this.ctx = ctx;

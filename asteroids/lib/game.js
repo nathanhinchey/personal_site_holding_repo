@@ -28,8 +28,8 @@
  };
 
   Game.NUM_ASTEROIDS = 3;
-  Game.DIM_X = 800;
-  Game.DIM_Y = 600;
+  Game.DIM_X = $(document).width();
+  Game.DIM_Y = $(document).height();
   Game.MAX_BULLETS = 10;
   Game.STARTING_LIVES = 3;
 
