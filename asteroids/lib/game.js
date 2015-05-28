@@ -4,6 +4,7 @@
   }
 
   var Game = window.Asteroids.Game = function(){
+    this.lives = Game.STARTING_LIVES;
     this.score = 0;
     this.asteroids = [];
     this.bullets = [];
@@ -30,11 +31,17 @@
   Game.DIM_X = 800;
   Game.DIM_Y = 600;
   Game.MAX_BULLETS = 10;
+  Game.STARTING_LIVES = 3;
 
 
 
   Game.prototype.draw = function (ctx) {
     $("#score").html(this.score);
+    var lives = "";
+    for (var life = 0; life < this.lives; life++){
+      lives += "Δ "
+    }
+    $("#lives").html(lives);
     // movement
 
     window.game.ship.drag();
@@ -85,6 +92,11 @@
     if (index > -1){
       this.asteroids.splice(index, 1);
     }
+  };
+
+  Game.prototype.gameOver = function () {
+    $("#game-over").removeClass("hidden");
+    this.ship.pos = [Game.DIM_X / 2, Game.DIM_Y / 2];
   };
 
   Game.prototype.step = function () {

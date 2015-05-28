@@ -16,8 +16,14 @@
     <script type="application/javascript" src="./lib/gameView.js"></script>
     <script type="application/javascript" src="./lib/bullet.js"></script>
     <header>
-      <h1 id="lives">Δ Δ</h1>
+      <h1 id="lives"></h1>
       <h1 id="score"></h1>
+      <div id="game-over" class="hidden">
+        <h1>You lose!</h1>
+        <a href="javascript:window.location.reload(true)">
+          Play again?
+        </a>
+      </div>
     </header>
     <canvas
       id="game-canvas"
@@ -60,5 +66,20 @@
   #lives {
     display: block;
     float: left;
+  }
+
+  #game-over {
+    text-align: center;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 150px;
+    background: #F99;
+    color: #000;
+  }
+
+  .hidden {
+    display: none;
   }
 </style>
