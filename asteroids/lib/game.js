@@ -34,6 +34,20 @@
 
 
   Game.prototype.draw = function (ctx) {
+    // movement
+
+    window.game.ship.drag();
+    if (Asteroids.leftPressed()){
+      window.game.ship.turn(0.1);
+    }
+    if (Asteroids.rightPressed()){
+      window.game.ship.turn(-0.1);
+    }
+    if (Asteroids.upPressed()){
+      window.game.ship.thrust();
+    }
+
+
     ctx.fillStyle = "#013";
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
     ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);

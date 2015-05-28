@@ -14,14 +14,15 @@
       this.game.draw(this.ctx)
     }.bind(this), 20);
 
-    key('up', function() { this.game.ship.thrust(-1) }.bind(this));
-    key('left', function() {
-      this.game.ship.turn(0.3);
-    }.bind(this));
-    key('down', function() { this.game.ship.thrust(1) }.bind(this));
-    key('right', function() {
-      this.game.ship.turn(-0.3);
-    }.bind(this));
+    window.Asteroids.leftPressed = function(){
+      return key.isPressed(37)
+    };
+    window.Asteroids.rightPressed = function(){
+      return key.isPressed(39)
+    };
+    window.Asteroids.upPressed = function(){
+      return key.isPressed(38)
+    };
 
     key('space', function(){
       if (game.bullets.length < Asteroids.Game.MAX_BULLETS){
