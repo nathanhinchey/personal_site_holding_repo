@@ -25,6 +25,13 @@
       console.log(this.game.ship.facing);
     }.bind(this));
 
+    key('space', function(){
+      if (game.bullets.length < Asteroids.Game.MAX_BULLETS){
+        bullet = new Asteroids.Bullet(this.game);
+        this.game.bullets.push(bullet);
+      }
+    }.bind(this));
+
     key('1', function() { console.log(this.game.ship.pos) }.bind(this));
     key('2', function() { console.log(this.game.ship.facing) }.bind(this));
   }
