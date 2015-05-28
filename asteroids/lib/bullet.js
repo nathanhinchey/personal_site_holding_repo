@@ -1,25 +1,31 @@
 (function() {
 
-  var BULLET_SPEED = 3;
+  var BULLET_SPEED = -10;
 
   var DEFAULTS = {
     radius: 3,
-    color: "blue"
+    color: "blue",
+    lineWidth: 4,
   }
 
   var Bullet = window.Asteroids.Bullet = function(game) {
-    DEFAULTS.vel = game.ship.velocity * BULLET_SPEED;
+    var vector = game.ship.facingVector();
+    DEFAULTS.vel = [
+      vector[0] * BULLET_SPEED + game.ship.velocity[0],
+      vector[1] * BULLET_SPEED + game.ship.velocity[1]
+    ];
+    setTimeout(function(){game.bullets.shift(); console.log("hi");}, 600)
     DEFAULTS.pos = Bullet.startingBulletPos(game);
     DEFAULTS.game = game;
 
-    window.Asteroids.MovingObject.call(this, defaults);
+    window.Asteroids.MovingObject.call(this, DEFAULTS);
   }
 
   Bullet.startingBulletPos = function(game) {
     var ship = game.ship;
     return [
-      ship.pos[0] + Bullet.normalize(ship.velocity)[0] * ship.radius,
-      ship.pos[1] + Bullet.normalize(ship.velocity)[1] * ship.radius
+      ship.pos[0] + ship.facingVector()[0] * (-ship.radius - DEFAULTS.radius),
+      ship.pos[1] + ship.facingVector()[1] * (-ship.radius - DEFAULTS.radius)
     ];
   }
 

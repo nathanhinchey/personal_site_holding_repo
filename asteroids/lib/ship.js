@@ -4,7 +4,8 @@
     color: "white",
     lineWidth: 1.5,
     radius: 20,
-    vel: [0,0]
+    vel: [0,0],
+    maxVel: 4
   }
 
   var Ship = window.Asteroids.Ship = function(pos,game) {
@@ -26,8 +27,10 @@
 
   Ship.prototype.thrust = function (impulse) {
     var direction = this.facingVector();
-    this.velocity[0] += impulse * direction[0];
-    this.velocity[1] += impulse * direction[1];
+    if (Asteroids.magnitude(this.velocity) < DEFAULTS.maxVel){
+      this.velocity[0] += impulse * direction[0];
+      this.velocity[1] += impulse * direction[1];
+    }
   };
 
   Ship.prototype.turn = function (radians) {

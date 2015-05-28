@@ -6,6 +6,7 @@
   var Game = window.Asteroids.Game = function(){
 
     this.asteroids = [];
+    this.bullets = [];
     (function () {
 
       for(var i = 0; i < Game.NUM_ASTEROIDS; i++){
@@ -28,6 +29,9 @@
   Game.NUM_ASTEROIDS = 0;
   Game.DIM_X = 800;
   Game.DIM_Y = 600;
+  Game.MAX_BULLETS = 10;
+
+
 
   Game.prototype.draw = function (ctx) {
     ctx.fillStyle = "#013";
@@ -74,7 +78,7 @@
   };
 
   Game.prototype.allObjects = function() {
-    return this.asteroids.concat(this.ship);
+    return this.asteroids.concat(this.ship).concat(this.bullets);
   };
 
   Game.wrap = function (pos, radius) {
