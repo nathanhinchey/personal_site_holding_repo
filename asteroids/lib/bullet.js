@@ -14,7 +14,12 @@
       vector[0] * BULLET_SPEED + game.ship.velocity[0],
       vector[1] * BULLET_SPEED + game.ship.velocity[1]
     ];
-    setTimeout(function(){game.bullets.shift();}, 600)
+    setTimeout(function(){
+      var index = this.game.bullets.indexOf(this);
+      if (index > -1){
+        this.game.bullets.splice(index, 1)
+      }
+    }.bind(this), 600);
     DEFAULTS.pos = Bullet.startingBulletPos(game);
     DEFAULTS.game = game;
 
