@@ -71,7 +71,7 @@ figure {
 
 a.icon {
   display: block;
-  width: 90px;
+  width: 120px;
   height: 108px;
   text-align: center;
   font-size: 24px;
@@ -82,12 +82,12 @@ a.icon {
 .icon figcaption {
   position: absolute;
   display: block;
-  width: 100%;
+  width: 110px;
   bottom: 0;
 }
 
 a.icon > img {
-  max-width: 100%;
+  max-width: 80px;
   margin: 0 auto;
 }
 
@@ -137,18 +137,25 @@ a.icon > img {
 }
 
 ul.icon {
-  position: absolute;
-  top: 190px;
-  left: 0;
-  width: 750px;
 }
 
-.icon > li:first-child {
+.icon > li {
   float: left;
+  margin-right: 40px;
 }
 
 .icon > li:last-child {
-  float: right;
+  float: left;
+  margin-right: 0;
+}
+
+.icon figcaption {
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.icon > li:hover figcaption {
+  opacity: 1;
 }
 
 .greeting {
@@ -249,6 +256,19 @@ h4 {
   color: blue;
   display: block;
   text-align: center;
+}
+
+.link > a {
+  padding: 0 10px;
+  border-right: 1px solid black;
+}
+
+.link > a:last-child {
+  border: none;
+}
+
+.link > a:hover {
+  text-decoration: underline;
 }
 
 .classic-link {

@@ -3,9 +3,9 @@
   <head>
     <title>Nathan Hinchey</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link rel="shortcut icon" href="http://nathanhinchey.github.io/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='assets/stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/stylesheet.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
   </head>
   <body>
     <main>
@@ -13,29 +13,44 @@
         <h1>NATHAN HINCHEY</h1>
         <h2>WEB DEVELOPER</h2>
       </header>
-      <ul class="icon group">
-        <li>
-          <a href="http://github.com/nathanhinchey" class="icon group">
-            <img src="githubsrc.png" alt="github" title="Github" />
-            <figcaption>Github</figcaption>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:nathanhinchey@gmail.com" class="icon group">
-            <img src="email_icon.png" alt="email" title="Email" />
-            <figcaption>Email</figcaption>
-          </a>
-        </li>
-      </ul>
 
       <section class="greeting">
           <figure class="portrait">
-            <img src="nathan-hinchey.jpg" alt="Nathan Hinchey" title="Resume" />
+            <img src="assets/images/nathan-hinchey.jpg" alt="Nathan Hinchey" title="Resume" />
           </figure>
 
         Hello.
         <br>
         I'm a New York City-based software developer.
+      </section>
+
+      <section class="contact-links">
+        <ul class="icon group">
+          <li>
+            <a href="http://github.com/nathanhinchey" class="icon group">
+              <img src="assets/images/githubsrc.png" alt="github" title="Github" />
+              <figcaption>Github</figcaption>
+            </a>
+          <li>
+            <a href="https://www.linkedin.com/pub/nathan-hinchey/14/a98/591" class="icon group">
+              <img src="assets/images/linkedin.png" alt="linked in" title="LinkedIn" />
+              <figcaption>LinkedIn</figcaption>
+            </a>
+          </li>
+          </li>
+          <li>
+            <a href="Resume.pdf" class="icon group">
+              <img src="assets/images/icon-cv.png" alt="resume" title="Resume" />
+              <figcaption>Resume</figcaption>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:nathanhinchey@gmail.com" class="icon group">
+              <img src="assets/images/email_icon.png" alt="email" title="Email" />
+              <figcaption>Email</figcaption>
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section class="about-me">
@@ -51,47 +66,47 @@
         <h3 class="section-header">Skills</h3>
         <ul class="skill-list group">
           <li>
-            <img src="git.svg" alt="git"/>
+            <img src="assets/images/git.svg" alt="git"/>
             <figcaption>git</figcaption>
           </li>
           <li>
-            <img src="backbone.png" alt="Backbone.js" />
+            <img src="assets/images/backbone.png" alt="Backbone.js" />
             <figcaption>Backbone.js</figcaption>
           </li>
           <li>
-            <img src="jquery.svg" alt="jQuery" />
+            <img src="assets/images/jquery.svg" alt="jQuery" />
             <figcaption>jQuery</figcaption>
           </li>
           <li>
-            <img src="Ruby_logo.png" alt="Ruby" />
+            <img src="assets/images/Ruby_logo.png" alt="Ruby" />
             <figcaption>Ruby</figcaption>
           </li>
           <li>
-            <img src="js.svg" alt="JavaScript" />
+            <img src="assets/images/js.svg" alt="JavaScript" />
             <figcaption>JavaScript</figcaption>
           </li>
           <li>
-            <img src="html5.svg" alt="HTML 5" />
+            <img src="assets/images/html5.svg" alt="HTML 5" />
             <figcaption>HTML 5</figcaption>
           </li>
           <li>
-            <img src="css3.svg" alt="CSS 3" />
+            <img src="assets/images/css3.svg" alt="CSS 3" />
             <figcaption>CSS 3</figcaption>
           </li>
           <li>
-            <img src="aws.svg" alt="Amazon Web Services" />
+            <img src="assets/images/aws.svg" alt="Amazon Web Services" />
             <figcaption>AWS</figcaption>
           </li>
           <li>
-            <img src="PostgreSQL.svg" alt="PostgreSQL" />
+            <img src="assets/images/PostgreSQL.svg" alt="PostgreSQL" />
             <figcaption>PostgreSQL</figcaption>
           </li>
           <li>
-            <img src="rails.svg" alt="Rails" />
+            <img src="assets/images/rails.svg" alt="Rails" />
             <figcaption>Rails</figcaption>
           </li>
           <li>
-            <img src="unity3d.png" alt="Unity3d" />
+            <img src="assets/images/unity3d.png" alt="Unity3d" />
             <figcaption>Unity3d</figcaption>
           </li>
         </ul>
@@ -100,17 +115,23 @@
       <section class="projects">
         <h3 class="section-header">Projects</h3>
         <ul>
-          <li><a href="http://okeris.com/"><img src="OkErisScreenshot.png" alt="OkEris" /></a>
+          <li><a href="http://okeris.com/"><img src="assets/images/OkErisScreenshot.png" alt="OkEris" /></a>
           <figcaption><a href="http://okeris.com/">OkEris.com</a></figcaption>
-          <a href="https://github.com/nathanhinchey/OkEris" class="link">Github Repo</a>
+          <nav class="link">
+            <a href="https://github.com/nathanhinchey/OkEris">Github</a>
+            <a href="http://okeris.com/">Live</a>
+          </nav>
           <p>
             A supervillain matchmaking app built in Backbone with a Rails JSON API. It includes a custom SQL query to efficiently calculate the rate of similarity between users based on questions they've answered.
           </p>
         </li>
 
-          <li><a href="http://okeris.com/"><img src="dodgeballspace.png" alt="OkEris" /></a>
+          <li><a href="http://www.dodgeball.space/"><img src="assets/images/dodgeballspace.png" alt="Space Dodgeball" /></a>
             <figcaption><a href="http://dodgeball.space/">dodgeball.space</a></figcaption>
-            <a href="https://github.com/nathanhinchey/asteroids" class="link">Github Repo</a>
+            <nav class="link">
+              <a href="https://github.com/nathanhinchey/asteroids">Github</a>
+              <a href="http://www.dodgeball.space/">Live</a>
+            </nav>
             <p>
               A arcade-style asteroids game built in JavaScript using HTML 5 canvas. The ship rotates using a trigonometric function I wrote that maps polar coordinates to JavaScript's cartesian coordinates. There's also a fun twist with the colors, using CSS keyframe animations (keyframe animations currently only work in Chrome).
             </p>
@@ -120,15 +141,20 @@
           <h4>
             <a href="https://github.com/nathanhinchey/chess">Ruby Chess</a>
           </h4>
-          <a href="https://github.com/nathanhinchey/chess" class="link">Github Repo</a>
+          <nav class="link">
+            <a href="https://github.com/nathanhinchey/chess">Github</a>
+          </nav>
           <p>
             A command line chess game with an AI that decides on moves based on chess relative scores. Keeps code DRY through piece inheritance. Follows the law of Demeter in keeping concerns carefully separated.
           </p>
       </li>
 
-      <li><a href="http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=35406"><img src="younevercall.png" alt="You Never Call" /></a>
+      <li><a href="http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=35406"><img src="assets/images/younevercall.png" alt="You Never Call" /></a>
         <figcaption><a href="http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=35406">You Never Call</a></figcaption>
-        <a href="https://github.com/selassid/younevercall" class="link">Github Repo</a>
+        <nav class="link">
+          <a href="https://github.com/selassid/younevercall">Github</a>
+          <a href="http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=35406">Live</a>
+        </nav>
         <p>
           A puzzle game built in Unity3d using C# scripts. Characters follow simple logic that dictates all movement. Logic is inherited, allowing for easy implementation of new behaviors. Made for the Ludum Dare 30 game jam.
         </p>
