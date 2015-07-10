@@ -1,6 +1,6 @@
 html, body, img, figure, article, section,
 figcaption, a, ul, li, p, h1, h2, h3, h4,
-nav, header {
+nav, header, div, span {
   border: none;
   outline: none;
   padding: 0;
@@ -17,6 +17,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 300;
+  color: #004;
 }
 
 .group::after {
@@ -35,9 +36,9 @@ img {
   text-align: center;
 }
 
-/************/
-/* sections */
-/************/
+/********************************/
+/*********** sections ***********/
+/********************************/
 
 section {
   display: block;
@@ -60,7 +61,7 @@ h1 {
   /*text-shadow: 1px 1px 0 black;*/
 }
 
-/* greeting */
+/*********** greeting ***********/
 .greeting {
   background-image: url('images/inspiration_point.jpg');
   background-size: cover;
@@ -106,7 +107,7 @@ h1.location {
   overflow: hidden;
 }
 
-/* contact links */
+/*********** contact links ***********/
 .contact-links {
   background-color: #FFF;
 }
@@ -148,7 +149,7 @@ h1.location {
   opacity: 1;
 }
 
-/* projects */
+/*********** projects ***********/
 .projects {
   background-color: #FF7;
 }
@@ -157,30 +158,30 @@ h1.location {
   color: #044;
 }
 
-.project::before {
+.project {
+  padding: 30px 0;
+  border-top: 3px solid #044;
+}
+
+/*.project::before {
   content: "";
   display: block;
   margin: 30px auto;
   height: 3px;
-  /*box-shadow: 0 0 2px #044;*/
-  width: 400px;
+  width: 600px;
   background: rgba(0,68,68, 1);
-}
+}*/
 
 .project-preview {
   display: block;
+  margin-bottom: 15px;
 }
 
-.projects figcaption {
-  font-size: 20px;
+.links-nav {
+  height: 45px;
 }
 
 .link {
-  height: 45px;
-  padding: 5px;
-}
-
-.link > a {
   display: block;
   border-right: 1px solid black;
   padding: 5px 20px;
@@ -189,7 +190,16 @@ h1.location {
   float: left;
 }
 
-.link > a:last-child {
+figcaption.link {
+  color: #004;
+  text-decoration: none;
+}
+
+.link:first-child {
+  padding-left: 0;
+}
+
+.link:last-child {
   border: none;
 }
 
