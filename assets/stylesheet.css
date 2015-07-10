@@ -17,7 +17,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 300;
-  color: #004;
+  color: #005;
 }
 
 .group::after {
@@ -92,9 +92,9 @@ h1.location {
 .about {
   margin: 40px;
   padding: 10px;
-  border-top: 5px solid #404;
-  border-bottom: 5px solid #404;
-  background-color: rgba(255,255,255,0.5);
+  /*border-top: 5px solid #404;*/
+  /*border-bottom: 5px solid #404;*/
+  background-color: rgba(255,255,255,1);
   color: #404;
 }
 
@@ -103,7 +103,7 @@ h1.location {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 3px solid #440;
+  /*border: 3px solid #440;*/
   overflow: hidden;
 }
 
@@ -151,7 +151,7 @@ h1.location {
 
 /*********** projects ***********/
 .projects {
-  background-color: #FF7;
+  background-color: #FFA;
 }
 
 .projects .section-header {
@@ -191,7 +191,7 @@ h1.location {
 }
 
 figcaption.link {
-  color: #004;
+  color: #005;
   text-decoration: none;
 }
 
