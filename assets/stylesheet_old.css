@@ -1,0 +1,300 @@
+article, html, body, h1, h2, h3 main,
+header, ul, li, a, p, img,
+figure, h4 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.group::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  background: lightgray;
+  /*background: #70A570;*/
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background: lightgray;
+  height: 100%;
+}
+
+header {
+  padding-top: 30px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 5px;
+  color: #204;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+
+    font-size: 60px;
+    font-weight: 900;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-size: 24px;
+  text-align: justify;
+  line-height: 1.3;
+}
+
+figure {
+  display: block;
+}
+
+a.icon {
+  display: block;
+  width: 120px;
+  height: 108px;
+  text-align: center;
+  font-size: 24px;
+  padding: 0 5px;
+  position: relative;
+}
+
+.icon figcaption {
+  position: absolute;
+  display: block;
+  width: 110px;
+  bottom: 0;
+}
+
+a.icon > img {
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+
+.top-nav {
+  width: 100%;
+  background: gray;
+  text-align: center;
+}
+
+.top-nav > ul {
+  margin: 0 auto;
+  display: block;
+  max-width: 750px;
+  text-align: center;
+}
+
+.top-nav li {
+  float: left;
+  padding: 0 20px;
+}
+
+.top-nav li:nth-child(2) {
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+.top-nav li:first-child {
+  margin-right: 35px;
+}
+
+.top-nav li:last-child {
+  margin-left: 35px;
+}
+
+.top-nav a {
+  display: block;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: blue;
+  width: 100px;
+}
+
+.top-nav a:hover {
+  color: white;
+}
+
+ul.icon {
+}
+
+.icon > li {
+  float: left;
+  margin-right: 40px;
+}
+
+.icon > li:last-child {
+  float: left;
+  margin-right: 0;
+}
+
+.icon figcaption {
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.icon > li:hover figcaption {
+  opacity: 1;
+}
+
+.greeting {
+  text-align: center;
+  font-size: 30px;
+  height: 240px;
+  width: 750px;
+}
+
+section {
+  display: block;
+  width: 100%;
+  margin: 0 0;
+}
+
+/*article::after {
+  content: "";
+  display: block;
+  width: 500px;
+  margin: 31px auto;
+  height: 1px;
+  background: black;
+}*/
+
+.portrait img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  border: 3px solid black;
+}
+
+.portrait {
+  width: 100px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.portrait a {
+  width: 100%;
+  height: 100%;
+}
+
+.section-header {
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.skill-list > li {
+  width: 100px;
+  height: 140px;
+  padding: 10px;
+  float: left;
+}
+
+.skill-list img {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.greeting a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+}
+
+.projects img {
+  width: 100%;
+  height: auto;
+}
+
+.projects p {
+  margin-bottom: 30px;
+}
+
+.projects li::before {
+  content: "";
+  display: block;
+  width: 300px;
+  margin: 31px auto;
+  height: 1px;
+  background: darkgray;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}
+
+.link {
+  color: blue;
+  display: block;
+  text-align: center;
+}
+
+.link > a {
+  padding: 0 10px;
+  border-right: 1px solid black;
+}
+
+.link > a:last-child {
+  border: none;
+}
+
+.link > a:hover {
+  text-decoration: underline;
+}
+
+.classic-link {
+  color: blue;
+}
+
+.classic-link:hover {
+  text-decoration: underline;
+}
+
+
+.contact-links {
+  background-color: pink;
+}
+
+.about-me {
+  background-color: blue;
+}
+
+.skills {
+  background-color: yellow;
+}
+
+article {
+  width: 600px;
+  margin: 0 auto;
+}
